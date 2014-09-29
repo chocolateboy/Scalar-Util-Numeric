@@ -8,7 +8,7 @@ use warnings;
 use base qw(Exporter);
 use XSLoader;
 
-our $VERSION = '0.22';
+our $VERSION = '0.30';
 
 our %EXPORT_TAGS = (
     'all' => [ qw(isbig isfloat isinf isint isnan isneg isnum isuv) ],
@@ -24,7 +24,7 @@ __END__
 
 =head1 NAME
 
-Scalar::Util::Numeric - numeric tests for Perl scalars
+Scalar::Util::Numeric - numeric tests for perl scalars
 
 =head1 SYNOPSIS
 
@@ -115,7 +115,7 @@ The others always return 1 or 0.
 
 =head1 VERSION
 
-0.22
+0.30
 
 =head1 AUTHORS
 
@@ -123,13 +123,13 @@ The others always return 1 or 0.
 
 =item * chocolateboy <chocolate@cpan.org>
 
-=item * Michael G Schwern <schwern@pobox.com>
+=item * Michael G. Schwern <schwern@pobox.com>
 
 =back
 
 =head1 COPYRIGHT
 
-Copyright (c) 2005-2010, chocolateboy.
+Copyright (c) 2005-2014, chocolateboy.
 
 This module is free software. It may be used, redistributed
 and/or modified under the same terms as Perl itself.

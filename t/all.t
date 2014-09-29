@@ -18,7 +18,7 @@ sub new {
     bless [ @_ ], $class;
 }
 
-# only debug the value if one or more of its tests fails
+# only debug the value if one or more of its tests fail
 sub diag_if_fail($@) {
     my $diag = shift;
     my $fail = 0;

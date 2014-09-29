@@ -1,4 +1,4 @@
-Scalar-Util-Numeric version 0.22
+Scalar-Util-Numeric version 0.30
 ================================
 
 This module exports a number of wrappers around perl's builtin looks_like_number function, which 
@@ -15,7 +15,7 @@ To install this module type the following:
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2005-2010 chocolateboy <chocolate@cpan.org>
+Copyright (C) 2005-2014 chocolateboy <chocolate@cpan.org>
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

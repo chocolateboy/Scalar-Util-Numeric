@@ -6,7 +6,8 @@ use warnings;
 use Config;
 use ExtUtils::MakeMaker;
 
-our $OPTIMIZE;
+my $EUMM_VERSION = eval($ExtUtils::MakeMaker::VERSION);
+my $OPTIMIZE;
 
 if ($Config{gccversion}) {
     $OPTIMIZE = '-O3 -Wall -W';
@@ -23,19 +24,20 @@ WriteMakefile(
     VERSION_FROM  => 'lib/Scalar/Util/Numeric.pm',
     PREREQ_PM     => {},
     ABSTRACT_FROM => 'lib/Scalar/Util/Numeric.pm',
-    AUTHOR        => 'chocolateboy <chocolate@cpan.org>, Michael G Schwern <schwern@pobox.com>',
+    AUTHOR        => 'chocolateboy <chocolate@cpan.org>, Michael G. Schwern <schwern@pobox.com>',
     LIBS          => [ '' ],
     DEFINE        => '',
     INC           => '-I.',
     OPTIMIZE      => $OPTIMIZE,
-    ($ExtUtils::MakeMaker::VERSION >= 6.31 ? (LICENSE => 'perl') : ()),
-    ($ExtUtils::MakeMaker::VERSION >= 6.46 ?
+    ($EUMM_VERSION >= 6.48 ? (MIN_PERL_VERSION => '5.8.0') : ()),
+    ($EUMM_VERSION >= 6.31 ? (LICENSE => 'perl') : ()),
+    ($EUMM_VERSION >= 6.46 ?
         (META_MERGE => {
             resources => {
-                repository => 'http://github.com/chocolateboy/Scalar-Util-Numeric',
+                repository => 'https://github.com/chocolateboy/Scalar-Util-Numeric',
+                bugtracker => 'https://github.com/chocolateboy/Scalar-Util-Numeric/issues',
             },
         })
         : ()
     ),
-
 );
