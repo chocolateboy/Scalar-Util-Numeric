@@ -6,7 +6,7 @@ use warnings;
 use Config;
 use Math::BigInt;
 use Math::Complex;
-use Test::More tests => 86;
+use Test::More tests => 74;
 
 use overload
     '""'     => sub { '' . $_[0]->[0] },
@@ -145,10 +145,11 @@ SKIP: {
         sub { is (isnan(42), 0, "isnan(42)") };
 }
 
-# throw in some near-misses (wrong spelling and wrong case) for the Win32 Inf and NaN
+# throw in some near-misses (wrong spelling) for the Win32 Inf and NaN
 # these should be invalid numbers on all platforms
-for my $fail ('1.#IMD', '-1.#IMD', '1.#IMF', '-1.#IMF', '1.#InD', '-1.#InD', '1.#InF', '-1.#InF') {
-    ok !isint($fail), "!isnit($fail)";
+# note that letter-case variants are specifically permitted
+for my $fail ('1.#IMD', '-1.#IMD', '1.#IMF', '-1.#IMF') {
+    ok !isint($fail), "!isint($fail)";
     ok !isinf($fail), "!isinf($fail)";
     ok !isnan($fail), "!isnan($fail)";
 }
