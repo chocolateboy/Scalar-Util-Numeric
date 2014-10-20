@@ -1,5 +1,9 @@
 Revision history for Perl extension Scalar::Util::Numeric.
 
+0.40 Mon Oct 20 22:55:00 2014
+
+    - RT 122843: handle case variants of 1.#IND, 1.#INF &c. on Windows (thanks, Aaron Crane)
+
 0.30 Mon Sep 29 22:57:42 2014
 
     - improve test diagnostics to help track down perl 5.21.3 regression (Schwern)
@@ -39,7 +43,7 @@ Revision history for Perl extension Scalar::Util::Numeric.
 0.02  Sun Oct 9 23:27:04 2005
 
     - fix uvmax test
-    - fix documentation typo (thanks Mike Castle)
+    - fix documentation typo (thanks, Mike Castle)
 
 0.01  Sat Mar 26 15:01:09 2005
 
