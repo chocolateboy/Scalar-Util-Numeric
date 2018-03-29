@@ -1,7 +1,7 @@
 Scalar-Util-Numeric version 0.40
 ================================
 
-This module exports a number of wrappers around perl's builtin looks_like_number function, which 
+This module exports a number of wrappers around perl's builtin looks_like_number function, which
 returns the numeric type of its argument, or 0 if it isn't numeric.
 
 INSTALLATION
@@ -15,10 +15,7 @@ To install this module type the following:
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2005-2014 chocolateboy <chocolate@cpan.org>
+Copyright (c) 2005-2014 by chocolateboy.
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
-
-http://www.gnu.org/copyleft/gpl.html
-http://www.perl.com/language/misc/Artistic.html
+This is free software; you can redistribute it and/or modify it under the
+terms of the Artistic License 2.0.

@@ -129,9 +129,9 @@ The others always return 1 or 0.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2005-2014, chocolateboy.
+Copyright (c) 2005-2014 by chocolateboy.
 
-This module is free software. It may be used, redistributed
-and/or modified under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under the
+terms of the Artistic License 2.0.
 
 =cut

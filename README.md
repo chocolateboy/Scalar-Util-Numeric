@@ -1,7 +1,7 @@
 # Scalar::Util::Numeric
 
-[![CPAN version](https://badge.fury.io/pl/Scalar-Util-Numeric.svg)](http://badge.fury.io/pl/Scalar-Util-Numeric)
-[![build status](https://secure.travis-ci.org/chocolateboy/Scalar-Util-Numeric.svg)](http://travis-ci.org/chocolateboy/Scalar-Util-Numeric)
+[![Build Status](https://secure.travis-ci.org/chocolateboy/Scalar-Util-Numeric.svg)](http://travis-ci.org/chocolateboy/Scalar-Util-Numeric)
+[![CPAN Version](https://badge.fury.io/pl/Scalar-Util-Numeric.svg)](http://badge.fury.io/pl/Scalar-Util-Numeric)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -109,21 +109,21 @@ The others always return 1 or 0.
 
 # SEE ALSO
 
-- ["type" in autobox](https://metacpan.org/pod/autobox#type)
-- [Data::Types](https://metacpan.org/pod/Data::Types)
-- [Params::Classify](https://metacpan.org/pod/Params::Classify)
-- [Params::Util](https://metacpan.org/pod/Params::Util)
-- [Scalar::Util](https://metacpan.org/pod/Scalar::Util)
-- [String::Numeric](https://metacpan.org/pod/String::Numeric)
+* ["type" in autobox](https://metacpan.org/pod/autobox#type)
+* [Data::Types](https://metacpan.org/pod/Data::Types)
+* [Params::Classify](https://metacpan.org/pod/Params::Classify)
+* [Params::Util](https://metacpan.org/pod/Params::Util)
+* [Scalar::Util](https://metacpan.org/pod/Scalar::Util)
+* [String::Numeric](https://metacpan.org/pod/String::Numeric)
 
 # AUTHORS
 
-- [chocolateboy](mailto:chocolate@cpan.org)
-- [Michael G. Schwern](mailto:schwern@pobox.com)
+* [chocolateboy](mailto:chocolate@cpan.org)
+* [Michael G. Schwern](mailto:schwern@pobox.com)
 
 # COPYRIGHT AND LICENSE
 
-Copyright (c) 2003-2018, chocolateboy.
+Copyright © 2003-2018 by chocolateboy.
 
-This module is free software; you can redistribute it and/or modify it under the
-terms of the [Artistic License 2.0](http://www.opensource.org/licenses/artistic-license-2.0.php).
+This is free software; you can redistribute it and/or modify it under the terms of the
+[Artistic License 2.0](http://www.opensource.org/licenses/artistic-license-2.0.php).
