@@ -11,7 +11,7 @@ use XSLoader;
 our $VERSION = '0.40';
 
 our %EXPORT_TAGS = (
-    'all' => [ qw(isbig isfloat isinf isint isnan isneg isnum isuv) ],
+    'all' => [ qw(isbig isfloat isinf isint isnan isneg isnum isuv uvmax) ],
 );
 
 our @EXPORT_OK = ( map { @$_ } values %EXPORT_TAGS );
@@ -40,12 +40,13 @@ Scalar::Util::Numeric - numeric tests for perl scalars
 
 =head1 DESCRIPTION
 
-This module exports a number of wrappers around perl's builtin C<grok_number> function, which
-returns the numeric type of its argument, or 0 if it isn't numeric.
+This module exports a number of wrappers around perl's builtin C<grok_number>
+function, which returns the numeric type of its argument, or 0 if it isn't numeric.
 
 =head1 TAGS
 
-All of the functions exported by Scalar::Util::Numeric can be imported by using the C<:all> tag:
+All of the functions exported by Scalar::Util::Numeric can be imported by using
+the C<:all> tag:
 
     use Scalar::Util::Numeric qw(:all);
 
@@ -80,7 +81,8 @@ The numeric type is a conjunction of the following flags:
 
 =head2 isnan
 
-The following flavours of C<isnum> (corresponding to the flags above) are also available:
+The following flavours of C<isnum> (corresponding to the flags above) are also
+available:
 
     isint
     isuv
@@ -94,6 +96,10 @@ C<isint> returns -1 if its operand is a negative integer, 1 if
 it's 0 or a positive integer, and 0 otherwise.
 
 The others always return 1 or 0.
+
+=head2 uvmax
+
+Returns UV_MAX, the largest UV (unsigned integer value).
 
 =head1 SEE ALSO
 

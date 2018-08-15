@@ -48,7 +48,7 @@ ok($float == $float, '$float == $float');
 ok($float == 3.1415927, '$float == 3.1415927');
 isa_ok($float, __PACKAGE__);
 
-my $uvmax = Scalar::Util::Numeric::uvmax();
+my $uvmax = uvmax();
 
 ok(defined($uvmax), 'uvmax is defined');
 
