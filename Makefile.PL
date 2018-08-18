@@ -19,7 +19,7 @@ if ($Config{gccversion}) {
     $OPTIMIZE = $Config{optimize};
 }
 
-WriteMakefile(
+my %META = (
     NAME          => 'Scalar::Util::Numeric',
     VERSION_FROM  => 'lib/Scalar/Util/Numeric.pm',
     PREREQ_PM     => {},
@@ -29,15 +29,23 @@ WriteMakefile(
     DEFINE        => '',
     INC           => '-I.',
     OPTIMIZE      => $OPTIMIZE,
-    ($EUMM_VERSION >= 6.48 ? (MIN_PERL_VERSION => '5.8.0') : ()),
-    ($EUMM_VERSION >= 6.31 ? (LICENSE => 'artistic_2') : ()),
-    ($EUMM_VERSION >= 6.46 ?
-        (META_MERGE => {
-            resources => {
-                repository => 'https://github.com/chocolateboy/Scalar-Util-Numeric',
-                bugtracker => 'https://github.com/chocolateboy/Scalar-Util-Numeric/issues',
-            },
-        })
-        : ()
-    ),
 );
+
+if ($EUMM_VERSION >= 6.48) {
+    $META{MIN_PERL_VERSION} = '5.8.0';
+}
+
+if ($EUMM_VERSION >= 6.31) {
+    $META{LICENSE} = 'artistic_2';
+}
+
+if ($EUMM_VERSION >= 6.46) {
+    $META{META_MERGE} = {
+        resources => {
+            repository => 'https://github.com/chocolateboy/Scalar-Util-Numeric',
+            bugtracker => 'https://github.com/chocolateboy/Scalar-Util-Numeric/issues',
+        },
+    }
+}
+
+WriteMakefile(%META);

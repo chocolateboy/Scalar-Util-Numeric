@@ -11,10 +11,10 @@ use XSLoader;
 our $VERSION = '0.40';
 
 our %EXPORT_TAGS = (
-    'all' => [ qw(isbig isfloat isinf isint isnan isneg isnum isuv uvmax) ],
+    'all' => [ qw(isbig isfloat isinf isint isnan isneg isnum isuv) ],
 );
 
-our @EXPORT_OK = ( map { @$_ } values %EXPORT_TAGS );
+our @EXPORT_OK = ((map { @$_ } values %EXPORT_TAGS), 'uvmax');
 
 XSLoader::load(__PACKAGE__, $VERSION);
 
@@ -45,8 +45,8 @@ function, which returns the numeric type of its argument, or 0 if it isn't numer
 
 =head1 TAGS
 
-All of the functions exported by Scalar::Util::Numeric can be imported by using
-the C<:all> tag:
+All of the C<isType> test functions exported by Scalar::Util::Numeric can be
+imported by using the C<:all> tag:
 
     use Scalar::Util::Numeric qw(:all);
 
@@ -101,6 +101,11 @@ The others always return 1 or 0.
 
 Returns UV_MAX, the largest UV (unsigned integer value).
 
+Note: this is not included in the symbols exported by the C<:all> tag and must
+be imported separately e.g.:
+
+    use Scalar::Util::Numeric qw(uvmax);
+
 =head1 SEE ALSO
 
 =over
@@ -135,7 +140,7 @@ Returns UV_MAX, the largest UV (unsigned integer value).
 
 =head1 COPYRIGHT
 
-Copyright (c) 2005-2014 by chocolateboy.
+Copyright (c) 2005-2018 by chocolateboy.
 
 This library is free software; you can redistribute it and/or modify it under the
 terms of the L<Artistic License 2.0|http://www.opensource.org/licenses/artistic-license-2.0.php>.

@@ -1,8 +1,16 @@
 Revision history for Perl extension Scalar::Util::Numeric.
 
+0.50 TBC
+
+    - export and document the uvmax function, which returns UV_MAX, the largest
+      unsigned value
+    - update ppport.h: 3.24 -> 3.42
+    - documentation tweaks
+
 0.40 2014-10-20
 
-    - RT 122843: handle case variants of 1.#IND, 1.#INF etc on Windows (thanks, Aaron Crane)
+    - RT 122843: handle case variants of 1.#IND, 1.#INF etc on Windows (thanks,
+      Aaron Crane)
 
 0.30 2014-09-29
 
@@ -47,6 +55,4 @@ Revision history for Perl extension Scalar::Util::Numeric.
 
 0.01 2005-03-26
 
-    - original version; created by h2xs 1.23 with options
-        -n Scalar::Util::Numeric
-
+    - original version; created by h2xs 1.23 with options -n Scalar::Util::Numeric

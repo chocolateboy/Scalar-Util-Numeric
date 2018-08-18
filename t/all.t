@@ -33,7 +33,7 @@ sub diag_if_fail($@) {
     }
 }
 
-use_ok('Scalar::Util::Numeric', qw(:all));
+use_ok('Scalar::Util::Numeric', qw(:all uvmax));
 
 # test overloading
 my $integer = __PACKAGE__->new(42);

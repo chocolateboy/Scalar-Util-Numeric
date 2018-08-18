@@ -19,6 +19,7 @@
   - [isneg](#isneg)
   - [isinf](#isinf)
   - [isnan](#isnan)
+  - [uvmax](#uvmax)
 - [VERSION](#version)
 - [SEE ALSO](#see-also)
 - [AUTHORS](#authors)
@@ -102,6 +103,10 @@ The following flavours of `isnum` (corresponding to the flags above) are also av
 it's 0 or a positive integer, and 0 otherwise.
 
 The others always return 1 or 0.
+
+## uvmax
+
+Returns `UV_MAX`, the largest `UV` (unsigned integer value).
 
 # VERSION
 
