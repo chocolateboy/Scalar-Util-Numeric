@@ -99,7 +99,8 @@ is (isneg(3.1415927), 0, "isneg(3.1415927)");
 diag_if_fail "INFINITY: '$infinity'" =>
     sub { is (isinf('Inf'), 1, "isinf('Inf')") },
     sub { is (isinf(3.1415927), 0, "isinf(3.1415927)") },
-    sub { is (isinf($infinity), 1, 'isinf($Math::Complex::Inf)') };
+    sub { is (isinf($infinity), 1, 'isinf($Math::Complex::Inf)') },
+    sub { is (isinf('INFINITE'), 0, 'isinf("INFINITE")') };
 
 is (isint(-99), -1, "isint(-99) == -1");
 is (isint(0), 1, "isint(0)");
@@ -119,7 +120,8 @@ SKIP: {
 
     diag_if_fail "NAN: '$nan'" =>
         sub { is (isnan('NaN'), 1, "isnan('NaN')") },
-        sub { is (isnan(42), 0, "isnan(42)") };
+        sub { is (isnan(42), 0, "isnan(42)") },
+        sub { is (isnan('NaNo'), 0, 'isnan("NaNo")') };
 }
 
 # test the assumed Inf/NaN values on Windows
@@ -129,12 +131,13 @@ SKIP: {
     my $infinity = '1.#INF';
 
     diag_if_fail "INFINITY: '$infinity'" =>
-        sub { is (isinf($infinity), 1, "isinf('$infinity')") }, 
-        sub { is (isinf("-$infinity"), 1, "isinf('-$infinity')") }, 
+        sub { is (isinf($infinity), 1, "isinf('$infinity')") },
+        sub { is (isinf("-$infinity"), 1, "isinf('-$infinity')") },
         sub { is (isinf(3.1415927), 0, "isinf(3.1415927)") },
         sub { is (isinf(42), 0, "isinf(42)") },
         sub { is (isint($infinity), 0, "isint('$infinity')") },
-        sub { is (isint("-$infinity"), 0, "isint('-$infinity')") };
+        sub { is (isint("-$infinity"), 0, "isint('-$infinity')") },
+        sub { is (isinf('INFINITE'), 0, 'isinf("INFINITE")') };
 
     my $nan = '1.#IND';
 
@@ -142,13 +145,14 @@ SKIP: {
         sub { is (isnan($nan), 1, "isnan('$nan')") },
         sub { is (isnan("-$nan"), 1, "isnan('-$nan')") },
         sub { is (isnan(3.1415927), 0, "isnan(3.1415927)") },
-        sub { is (isnan(42), 0, "isnan(42)") };
+        sub { is (isnan(42), 0, "isnan(42)") },
+        sub { is (isnan('NaNo'), 0, "isnan('NaNo')") };
 }
 
 # throw in some near-misses (wrong spelling) for the Win32 Inf and NaN
 # these should be invalid numbers on all platforms
 # note that letter-case variants are specifically permitted
-for my $fail ('1.#IMD', '-1.#IMD', '1.#IMF', '-1.#IMF') {
+for my $fail ('1.#IMD', '-1.#IMD', '1.#IMF', '-1.#IMF', 'NaNo', 'INFINITE') {
     ok !isint($fail), "!isint($fail)";
     ok !isinf($fail), "!isinf($fail)";
     ok !isnan($fail), "!isnan($fail)";
